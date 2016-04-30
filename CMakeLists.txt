@@ -70,6 +70,12 @@ FILE(GLOB v8_src
   v8/src/snapshot/snapshot-empty.cc
 )
 
+set(nitrojs_src 
+  nitrojs/libraries.cpp
+  nitrojs/b8.cpp
+  nitrojs/natives.h
+)
+
 FILE(GLOB d8_src 
   v8/src/d8/d8.cc
   v8/src/d8/d8-windows.cc
@@ -119,6 +125,7 @@ ADD_LIBRARY(v8
 )
 
 ADD_EXECUTABLE(nitrojs
+ ${nitrojs_src}
  ${d8_src}
 )
 
